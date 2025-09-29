@@ -1,5 +1,6 @@
 plugins {
     kotlin("jvm") version "2.1.10"
+    application
 }
 
 group = "com.duoc"
@@ -10,7 +11,12 @@ repositories {
 }
 
 dependencies {
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3")
     testImplementation(kotlin("test"))
+}
+
+application {
+    mainClass.set("com.duoc.MainKt")
 }
 
 tasks.test {
